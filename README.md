@@ -63,9 +63,6 @@
 <!-- Activity Graph -->
 [![Claudia's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=claudialbombin&theme=github-dark&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=c9d1d9&hide_border=true&area=true&area_color=58a6ff)](https://github.com/claudialbombin)
 
-### 🔝 Most Used Languages (Detailed View)
-<!-- OSSInsight Widget: Top Languages -->
-[![Top Languages](https://next.ossinsight.io/widgets/official/compose-top-languages?owner_id=claudialbombin&activity=pushes&period=past_28_days&repo_id=null&theme=dark&background=transparent)](https://next.ossinsight.io/analyze/claudialbombin)
 
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
