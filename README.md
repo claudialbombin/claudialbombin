@@ -9,13 +9,23 @@
 <a href="mailto:claudialbombin@gmail.com"><img src="assets/badges/email.svg" alt="Email"/></a>
 <a href="https://instagram.com/@claudialbzz"><img src="assets/badges/instagram.svg" alt="Instagram"/></a>
 
+<br/><br/>
+
+<a href="#about"><b>About</b></a> ·
+<a href="#projects"><b>Projects</b></a> ·
+<a href="#tech-stack"><b>Tech Stack</b></a> ·
+<a href="#analytics"><b>Analytics</b></a> ·
+<a href="#snake"><b>Snake 🐍</b></a>
+
 </div>
 
 <br/>
 
+<div id="about"></div>
+
 ## 💫 About Me
 
-I'm a second-year **Mathematical Engineering & Artificial Intelligence** student at **ICAI, Universidad Pontificia Comillas**, and a **42 Madrid (Fundación Telefónica) Cursus** student on the side. Most of what lives in my repositories comes back to the same idea: **turning uncertainty into a number I can act on** — Monte Carlo option pricing, an F1 pit-stop strategy solved as a Markov Decision Process, particle filters for stochastic volatility, and a Hi-Lo blackjack solver, alongside my ICAI coursework and 42's C curriculum.
+I'm a third-year **Mathematical Engineering & Artificial Intelligence** student at **ICAI, Universidad Pontificia Comillas**, and a **42 Madrid (Fundación Telefónica) Cursus** student on the side. Most of what lives in my repositories comes back to the same idea: **turning uncertainty into a number I can act on** — Monte Carlo option pricing, an F1 pit-stop strategy solved as a Markov Decision Process, particle filters for stochastic volatility, and a Hi-Lo blackjack solver, alongside my ICAI coursework and 42's C curriculum.
 
 I also compete in academic and parliamentary debate (British Parliamentary format), which is where the habit of stress-testing an argument before trusting it comes from — the same instinct I apply to a model before trusting its output.
 
@@ -32,7 +42,7 @@ class Claudia:
 <summary><b>🔭 quick facts</b> (click to expand)</summary>
 <br/>
 <ul>
-<li>🎓 iMAT program (Mathematical Engineering &amp; AI) — ICAI, Comillas — year 2</li>
+<li>🎓 iMAT program (Mathematical Engineering &amp; AI) — ICAI, Comillas — year 3</li>
 <li>🖥️ 42 Madrid Fundación Telefónica — Cursus (C, algorithms, systems)</li>
 <li>🔭 Currently building <strong><a href="https://github.com/claudialbombin/pitwall">pitwall</a></strong>, a stochastic F1 pit-stop optimizer, and a dual Python/C <strong><a href="https://github.com/claudialbombin/monte-carlo-option-pricer">options pricing engine</a></strong></li>
 <li>🤝 Open to collaborating on open-source simulation/ML tooling and data engineering projects</li>
@@ -42,6 +52,8 @@ class Claudia:
 </details>
 
 <br/>
+
+<div id="projects"></div>
 
 ## 🚀 Featured Projects
 
@@ -90,59 +102,77 @@ class Claudia:
 
 <br/>
 
+<div id="tech-stack"></div>
+
 ## 💻 Tech Stack
 
 <div align="center">
 <img src="assets/tech-stack.svg" alt="Tech stack, verified from real repos" width="100%"/>
 </div>
 
-<sub>No badge service, no guessing — every pill above is a plain SVG that lives in this repo, and every technology on it was found by grepping my own public repos (dependency files, imports, coursework folders), not copied from a generic list. Hover a pill on GitHub for the exact evidence, or expand below to click straight through to it.</sub>
+<sub>No badge service, no guessing — every pill above is a plain SVG that lives in this repo, and every technology on it was found by grepping my own public repos (dependency files, imports, coursework folders), not copied from a generic list. Click any category below to jump straight to the proof.</sub>
 
-<details>
-<summary><b>🔍 Explore the evidence</b> — click a category to see exactly where each tool is used</summary>
 <br/>
 
-<p><strong>Languages</strong></p>
+<details>
+<summary><b>🐍 Languages</b> — 2</summary>
+<br/>
 <ul>
 <li><code>Python</code> — 11 repos, e.g. <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
 <li><code>C</code> — 5 repos, e.g. <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a>, <a href="https://github.com/claudialbombin/BSQ">BSQ</a>, <a href="https://github.com/claudialbombin/push_swap">push_swap</a></li>
 </ul>
+</details>
 
-<p><strong>Data Science &amp; ML</strong></p>
+<details>
+<summary><b>🧠 Data Science &amp; ML</b> — 6</summary>
+<br/>
 <ul>
 <li><code>NumPy</code> · <code>Pandas</code> · <code>Matplotlib</code> — across <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/scm-heston-filter">scm-heston-filter</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
 <li><code>Seaborn</code> · <code>scikit-learn</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (Visualización de Datos, ML coursework)</li>
 <li><code>Jupyter</code> — analysis notebooks in <a href="https://github.com/claudialbombin/2imat">2imat</a> and <a href="https://github.com/claudialbombin/pitwall">pitwall</a></li>
 </ul>
+</details>
 
-<p><strong>Databases</strong></p>
+<details>
+<summary><b>🗄️ Databases</b> — 3</summary>
+<br/>
 <ul>
 <li><code>MySQL</code> · <code>MongoDB</code> · <code>Neo4j</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (data acquisition & databases coursework)</li>
 </ul>
+</details>
 
-<p><strong>Dashboards &amp; Viz</strong></p>
+<details>
+<summary><b>📈 Dashboards &amp; Viz</b> — 3</summary>
+<br/>
 <ul>
 <li><code>Streamlit</code> · <code>Tableau</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
 <li><code>Plotly</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a>, <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator</li>
 </ul>
+</details>
 
-<p><strong>Testing &amp; CI/CD</strong></p>
+<details>
+<summary><b>✅ Testing &amp; CI/CD</b> — 2</summary>
+<br/>
 <ul>
 <li><code>pytest</code> — 77 unit tests in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, plus <a href="https://github.com/claudialbombin/pitwall">pitwall</a> and <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a></li>
 <li><code>GitHub Actions</code> — <a href="./.github/workflows/snake.yml">snake.yml</a> and <a href="./.github/workflows/update-stats.yml">update-stats.yml</a> right here, plus CI in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a></li>
 </ul>
+</details>
 
-<p><strong>Web</strong></p>
+<details>
+<summary><b>🌐 Web</b> — 3</summary>
+<br/>
 <ul>
 <li><code>JavaScript</code> — <a href="https://github.com/claudialbombin/pause">pause</a> (PWA)</li>
 <li><code>HTML</code> · <code>CSS</code> — <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator, <a href="https://github.com/claudialbombin/pause">pause</a></li>
 </ul>
+</details>
 
 <sub>Dropped from my old badge list because I couldn't back them up with real code: TensorFlow, PyTorch, R, CUDA, Figma, Adobe CC, Canva, PowerShell, Selenium, ArangoDB, SQL Server. If I start actually using one, it'll show up here — with a link.</sub>
 
-</details>
-
 <br/>
+
+<div id="analytics"></div>
 
 ## 📊 GitHub Analytics
 
@@ -157,6 +187,8 @@ class Claudia:
 </div>
 
 <sub>Both cards above are plain SVG files that live in this repo (`assets/`) — nothing is fetched from a third-party server, so they always render. They're kept current automatically by <a href="./.github/workflows/update-stats.yml">a weekly GitHub Action</a> that pulls real numbers from the GitHub API and re-commits the SVGs.</sub>
+
+<div id="snake"></div>
 
 ### 🐍 Contribution Snake
 
