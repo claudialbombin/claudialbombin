@@ -1,0 +1,5 @@
+<svg width="95" height="34" viewBox="0 0 95 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="X">
+  <rect width="95" height="34" rx="6" fill="#000000"/>
+  <g transform="translate(14,9) scale(0.7)" fill="#ffffff"><path d="M1 1 L19 19 M19 1 L1 19" stroke="white" stroke-width="3" fill="none"/></g>
+  <text x="46" y="22" font-family="Segoe UI, Verdana, sans-serif" font-size="14" font-weight="700" letter-spacing="0.5" fill="#ffffff">X</text>
+</svg>

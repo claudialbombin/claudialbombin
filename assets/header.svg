@@ -1,0 +1,66 @@
+<svg width="900" height="210" viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claudia Lopez Bombin banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132238"/>
+      <stop offset="55%" stop-color="#173a63"/>
+      <stop offset="100%" stop-color="#1f6fb2"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.08"/>
+    </linearGradient>
+    <style>
+      @keyframes floatWave {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(-40px); }
+        100% { transform: translateX(0px); }
+      }
+      #waveGroup { animation: floatWave 9s ease-in-out infinite; }
+
+      @keyframes blink {
+        0%, 45% { opacity: 1; }
+        50%, 95% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      #cursor { animation: blink 1s steps(1) infinite; }
+
+      .typeline { opacity: 0; font: 600 22px "Fira Code", Consolas, monospace; fill: #9fd0ff; }
+      @keyframes cycle {
+        0%   { opacity: 0; }
+        3%   { opacity: 1; }
+        22%  { opacity: 1; }
+        26%  { opacity: 0; }
+        100% { opacity: 0; }
+      }
+      #line1 { animation: cycle 16s ease-in-out infinite; animation-delay: 0s; }
+      #line2 { animation: cycle 16s ease-in-out infinite; animation-delay: 4s; }
+      #line3 { animation: cycle 16s ease-in-out infinite; animation-delay: 8s; }
+      #line4 { animation: cycle 16s ease-in-out infinite; animation-delay: 12s; }
+
+      .name { font: 700 40px "Segoe UI", Verdana, sans-serif; fill: #ffffff; }
+      .tag  { font: 400 15px "Segoe UI", Verdana, sans-serif; fill: #c9d9ec; }
+    </style>
+    <clipPath id="rounded">
+      <rect width="900" height="210" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <rect width="900" height="210" fill="url(#bg)"/>
+
+    <g id="waveGroup" opacity="0.6">
+      <path d="M -50 170 Q 100 140 250 170 T 550 170 T 850 170 T 1050 170 V 210 H -50 Z" fill="url(#wave)"/>
+      <path d="M -50 185 Q 120 160 260 185 T 560 185 T 860 185 T 1050 185 V 210 H -50 Z" fill="#58a6ff" opacity="0.15"/>
+    </g>
+
+    <text x="450" y="75" text-anchor="middle" class="name">Claudia Lopez Bombin</text>
+    <text x="450" y="102" text-anchor="middle" class="tag">Mathematical Engineering &amp; AI · ICAI + 42 Madrid</text>
+
+    <g text-anchor="middle">
+      <text id="line1" class="typeline" x="450" y="150">Mathematical Engineering &amp; AI @ ICAI<tspan id="cursor">_</tspan></text>
+      <text id="line2" class="typeline" x="450" y="150">42 Madrid Fundacion Telefonica Cursus<tspan id="cursor">_</tspan></text>
+      <text id="line3" class="typeline" x="450" y="150">Monte Carlo methods &amp; stochastic simulation<tspan id="cursor">_</tspan></text>
+      <text id="line4" class="typeline" x="450" y="150">Competitive debater — British Parliamentary<tspan id="cursor">_</tspan></text>
+    </g>
+  </g>
+</svg>

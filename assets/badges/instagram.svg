@@ -1,0 +1,5 @@
+<svg width="175" height="34" viewBox="0 0 175 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="INSTAGRAM">
+  <rect width="175" height="34" rx="6" fill="#C2185B"/>
+  <g transform="translate(14,9) scale(0.7)" fill="#ffffff"><rect x="0" y="0" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/><circle cx="10" cy="10" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="15.5" cy="4.5" r="1.4" fill="white"/></g>
+  <text x="46" y="22" font-family="Segoe UI, Verdana, sans-serif" font-size="14" font-weight="700" letter-spacing="0.5" fill="#ffffff">INSTAGRAM</text>
+</svg>

@@ -1,17 +1,13 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a5f,100:58a6ff&height=180&section=header&text=Claudia%20Lopez%20Bombin&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Mathematical%20Engineering%20%26%20AI%20%C2%B7%20ICAI%20%2B%2042%20Madrid&descAlignY=58&descSize=18" width="100%"/>
-
-<a href="https://github.com/claudialbombin">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=560&lines=Mathematical+Engineering+%26+AI+%40+ICAI;42+Madrid+Fundaci%C3%B3n+Telef%C3%B3nica+Cursus;Monte+Carlo+methods+%26+stochastic+simulation;Competitive+debater+%E2%80%94+British+Parliamentary" alt="Typing SVG" />
-</a>
+<img src="assets/header.svg" alt="Claudia Lopez Bombin" width="100%"/>
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/claudia-lopez-bombin)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/@claudialbzz)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:claudialbombin@gmail.com)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/@claudialbzz)
+<a href="https://linkedin.com/in/claudia-lopez-bombin"><img src="assets/badges/linkedin.svg" alt="LinkedIn"/></a>
+<a href="https://x.com/@claudialbzz"><img src="assets/badges/x.svg" alt="X"/></a>
+<a href="mailto:claudialbombin@gmail.com"><img src="assets/badges/email.svg" alt="Email"/></a>
+<a href="https://instagram.com/@claudialbzz"><img src="assets/badges/instagram.svg" alt="Instagram"/></a>
 
 </div>
 
@@ -35,14 +31,14 @@ class Claudia:
 <details>
 <summary><b>🔭 quick facts</b> (click to expand)</summary>
 <br/>
-
-- 🎓 iMAT program (Mathematical Engineering & AI) — ICAI, Comillas — year 2
-- 🖥️ 42 Madrid Fundación Telefónica — Cursus (C, algorithms, systems)
-- 🔭 Currently building **[pitwall](https://github.com/claudialbombin/pitwall)**, a stochastic F1 pit-stop optimizer, and a dual Python/C **[options pricing engine](https://github.com/claudialbombin/monte-carlo-option-pricer)**
-- 🤝 Open to collaborating on open-source simulation/ML tooling and data engineering projects
-- 💬 Ask me about Monte Carlo methods, Python↔C performance trade-offs, or debate case construction
-- ⚡ Fun fact: constructing a debate case and debugging a model are the same exercise — both mean tracing a conclusion back to the premise that's actually wrong
-
+<ul>
+<li>🎓 iMAT program (Mathematical Engineering &amp; AI) — ICAI, Comillas — year 2</li>
+<li>🖥️ 42 Madrid Fundación Telefónica — Cursus (C, algorithms, systems)</li>
+<li>🔭 Currently building <strong><a href="https://github.com/claudialbombin/pitwall">pitwall</a></strong>, a stochastic F1 pit-stop optimizer, and a dual Python/C <strong><a href="https://github.com/claudialbombin/monte-carlo-option-pricer">options pricing engine</a></strong></li>
+<li>🤝 Open to collaborating on open-source simulation/ML tooling and data engineering projects</li>
+<li>💬 Ask me about Monte Carlo methods, Python↔C performance trade-offs, or debate case construction</li>
+<li>⚡ Fun fact: constructing a debate case and debugging a model are the same exercise — both mean tracing a conclusion back to the premise that's actually wrong</li>
+</ul>
 </details>
 
 <br/>
@@ -52,56 +48,38 @@ class Claudia:
 <table>
 <tr>
 <td width="50%" valign="top">
-
-### 🏎️ [pitwall](https://github.com/claudialbombin/pitwall)
-Stochastic **F1 pit-stop strategy optimizer**: a Markov Decision Process solved over tyre-degradation and safety-car models, calibrated with Gaussian Process Regression and Bayesian inference, backtested against real race data via Monte Carlo simulation — with an interactive web simulator to explore the resulting strategy.
-
-`Python` `MDP` `Bayesian inference` `Monte Carlo`
-
+<h3>🏎️ <a href="https://github.com/claudialbombin/pitwall">pitwall</a></h3>
+<p>Stochastic <strong>F1 pit-stop strategy optimizer</strong>: a Markov Decision Process solved over tyre-degradation and safety-car models, calibrated with Gaussian Process Regression and Bayesian inference, backtested against real race data via Monte Carlo simulation — with an interactive web simulator to explore the resulting strategy.</p>
+<p><code>Python</code> <code>MDP</code> <code>Bayesian inference</code> <code>Monte Carlo</code></p>
 </td>
 <td width="50%" valign="top">
-
-### 📈 [monte-carlo-option-pricer](https://github.com/claudialbombin/monte-carlo-option-pricer)
-Option pricing engine covering **European, Asian and barrier options** under Black-Scholes and Heston stochastic volatility, with Greeks computed four ways (pathwise, likelihood-ratio, finite-difference, closed-form). Parallel Python and C implementations, 77 unit tests.
-
-`Python` `C` `Quant finance`
-
+<h3>📈 <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a></h3>
+<p>Option pricing engine covering <strong>European, Asian and barrier options</strong> under Black-Scholes and Heston stochastic volatility, with Greeks computed four ways (pathwise, likelihood-ratio, finite-difference, closed-form). Parallel Python and C implementations, 77 unit tests.</p>
+<p><code>Python</code> <code>C</code> <code>Quant finance</code></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-
-### 🃏 [beat-the-dealer](https://github.com/claudialbombin/beat-the-dealer)
-Blackjack solved two ways: Monte Carlo simulation derives optimal basic strategy, then a **Hi-Lo card-counting** layer shows the edge it buys — expected value rising roughly linearly with the true count. Dual Python/C implementation, the C version written under 42-style constraints (no dynamic memory, ≤25 lines per function).
-
-`Python` `C` `Monte Carlo`
-
+<h3>🃏 <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a></h3>
+<p>Blackjack solved two ways: Monte Carlo simulation derives optimal basic strategy, then a <strong>Hi-Lo card-counting</strong> layer shows the edge it buys — expected value rising roughly linearly with the true count. Dual Python/C implementation, the C version written under 42-style constraints (no dynamic memory, ≤25 lines per function).</p>
+<p><code>Python</code> <code>C</code> <code>Monte Carlo</code></p>
 </td>
 <td width="50%" valign="top">
-
-### 🎲 [scm-heston-filter](https://github.com/claudialbombin/scm-heston-filter)
-A **particle filter** (Sequential Monte Carlo) that tracks the unobserved volatility state of the Heston model from noisy price observations alone — the estimation half of the same stochastic-volatility problem `monte-carlo-option-pricer` prices.
-
-`Python` `Sequential Monte Carlo`
-
+<h3>🎲 <a href="https://github.com/claudialbombin/scm-heston-filter">scm-heston-filter</a></h3>
+<p>A <strong>particle filter</strong> (Sequential Monte Carlo) that tracks the unobserved volatility state of the Heston model from noisy price observations alone — the estimation half of the same stochastic-volatility problem <code>monte-carlo-option-pricer</code> prices.</p>
+<p><code>Python</code> <code>Sequential Monte Carlo</code></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-
-### 🫁 [pause](https://github.com/claudialbombin/pause)
-An installable **PWA** that puts a short breathing exercise between you and Instagram/TikTok/YouTube (or any app you name) — friction instead of a hard block, aimed at breaking the autopilot open-and-scroll habit.
-
-`JavaScript` `PWA` `Wellbeing`
-
+<h3>🫁 <a href="https://github.com/claudialbombin/pause">pause</a></h3>
+<p>An installable <strong>PWA</strong> that puts a short breathing exercise between you and Instagram/TikTok/YouTube (or any app you name) — friction instead of a hard block, aimed at breaking the autopilot open-and-scroll habit.</p>
+<p><code>JavaScript</code> <code>PWA</code> <code>Wellbeing</code></p>
 </td>
 <td width="50%" valign="top">
-
-### 🀄 [mus-stochastic-suite](https://github.com/claudialbombin/mus-stochastic-suite) <sub>· early stage</sub>
-Planned: an interactive **Mus** (Spanish card game) suite — local multiplayer, bots at adjustable difficulty, a beginner tutorial, and dual Python/C engines that simulate thousands of games to model optimal strategy.
-
-`Python` `C` `Game theory`
-
+<h3>🀄 <a href="https://github.com/claudialbombin/mus-stochastic-suite">mus-stochastic-suite</a> <sub>· early stage</sub></h3>
+<p>Planned: an interactive <strong>Mus</strong> (Spanish card game) suite — local multiplayer, bots at adjustable difficulty, a beginner tutorial, and dual Python/C engines that simulate thousands of games to model optimal strategy.</p>
+<p><code>Python</code> <code>C</code> <code>Game theory</code></p>
 </td>
 </tr>
 </table>
@@ -145,44 +123,48 @@ Planned: an interactive **Mus** (Spanish card game) suite — local multiplayer,
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
+> Badges above use shields.io (the same service you had before). If those don't load in your browser either, the tech-stack list is still readable as plain text — see the alt text, or ask and I'll convert them to self-hosted SVGs the same way I did the rest of this page.
+
 <br/>
 
 ## 📊 GitHub Analytics
 
 <div align="center">
 
-<img height="165em" src="https://github-readme-stats.vercel.app/api?username=claudialbombin&theme=dark&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&icon_color=58a6ff"/>
-<img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=claudialbombin&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact&langs_count=10&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9"/>
+<img src="assets/profile-stats.svg" alt="Profile stats" width="480"/>
 
-<img src="https://streak-stats.demolab.com/?user=claudialbombin&theme=dark&hide_border=true&background=0d1117&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak"/>
+<br/><br/>
 
-[![Claudia's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=claudialbombin&theme=github-dark&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=c9d1d9&hide_border=true&area=true&area_color=58a6ff)](https://github.com/claudialbombin)
-
-</div>
-
-### 🐍 Contribution Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/claudialbombin/claudialbombin/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/claudialbombin/claudialbombin/output/github-contribution-grid-snake.svg" />
-  <img alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/claudialbombin/claudialbombin/output/github-contribution-grid-snake.svg" />
-</picture>
-
-<sub>Generated nightly by <a href="./.github/workflows/snake.yml">a GitHub Action</a> from my real contribution graph — see setup note below.</sub>
+<img src="assets/top-langs.svg" alt="Most used languages" width="480"/>
 
 </div>
 
+<sub>Both cards above are plain SVG files that live in this repo (`assets/`) — nothing is fetched from a third-party server, so they always render. They're kept current automatically by <a href="./.github/workflows/update-stats.yml">a weekly GitHub Action</a> that pulls real numbers from the GitHub API and re-commits the SVGs.</sub>
+
+<details>
+<summary>🐍 Contribution snake (optional, one-time setup)</summary>
 <br/>
 
-### ✍️ Random Dev Quote
+This repo also ships <a href="./.github/workflows/snake.yml">a workflow</a> that turns your real contribution graph into an animated snake. It needs to run once before the image exists — it's not enabled by default:
+<ol>
+<li>Push this repo (with the <code>.github/workflows/snake.yml</code> file) to GitHub.</li>
+<li>Go to the <strong>Actions</strong> tab → select <strong>"Generate Snake animation"</strong> → <strong>Run workflow</strong>.</li>
+<li>Wait ~1 minute — it creates an <code>output</code> branch with the generated SVGs.</li>
+<li>Then add this to the README, wherever you'd like it:</li>
+</ol>
 
-<div align="center">
+```md
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/claudialbombin/claudialbombin/output/github-contribution-grid-snake-dark.svg" />
+  <img alt="snake" src="https://raw.githubusercontent.com/claudialbombin/claudialbombin/output/github-contribution-grid-snake.svg" />
+</picture>
+```
 
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
+It re-runs nightly after that, so it stays in sync with your real activity.
 
-</div>
+</details>
+
+<br/>
 
 ---
 
