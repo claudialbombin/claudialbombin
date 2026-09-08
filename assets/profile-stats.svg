@@ -21,7 +21,7 @@
     </g><line x1="240.0" y1="20" x2="240.0" y2="100" stroke="#30363d" stroke-width="1"/>
     <g transform="translate(360.0,0)" opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.45s" fill="freeze"/>
-      <text x="60.0" y="46" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="28" font-weight="700" fill="#58a6ff">2</text>
+      <text x="60.0" y="46" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="28" font-weight="700" fill="#58a6ff">3</text>
       <text x="60.0" y="66" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="10.5" fill="#c9d9ec"><tspan x="60.0" dy="0">Years @</tspan><tspan x="60.0" dy="14">ICAI</tspan></text>
     </g><line x1="360.0" y1="20" x2="360.0" y2="100" stroke="#30363d" stroke-width="1"/>
   </g>
