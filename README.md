@@ -92,37 +92,55 @@ class Claudia:
 
 ## 💻 Tech Stack
 
-### 🤖 AI/ML & Data Science
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
+<div align="center">
+<img src="assets/tech-stack.svg" alt="Tech stack, verified from real repos" width="100%"/>
+</div>
 
-### 💾 Databases
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Microsoft SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![ArangoDB](https://img.shields.io/badge/ArangoDB-DDE072?style=for-the-badge&logo=arangodb&logoColor=black)
+<sub>No badge service, no guessing — every pill above is a plain SVG that lives in this repo, and every technology on it was found by grepping my own public repos (dependency files, imports, coursework folders), not copied from a generic list. Hover a pill on GitHub for the exact evidence, or expand below to click straight through to it.</sub>
 
-### ⚡ Performance & Systems
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
-![Anaconda](https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=anaconda&logoColor=white)
+<details>
+<summary><b>🔍 Explore the evidence</b> — click a category to see exactly where each tool is used</summary>
+<br/>
 
-### 🎨 Design & Tools
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Adobe Creative Cloud](https://img.shields.io/badge/Adobe_CC-DA1F26?style=for-the-badge&logo=adobe-creative-cloud&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white)
+<p><strong>Languages</strong></p>
+<ul>
+<li><code>Python</code> — 11 repos, e.g. <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
+<li><code>C</code> — 5 repos, e.g. <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a>, <a href="https://github.com/claudialbombin/BSQ">BSQ</a>, <a href="https://github.com/claudialbombin/push_swap">push_swap</a></li>
+</ul>
 
-### 📝 Automation
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+<p><strong>Data Science &amp; ML</strong></p>
+<ul>
+<li><code>NumPy</code> · <code>Pandas</code> · <code>Matplotlib</code> — across <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/scm-heston-filter">scm-heston-filter</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
+<li><code>Seaborn</code> · <code>scikit-learn</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (Visualización de Datos, ML coursework)</li>
+<li><code>Jupyter</code> — analysis notebooks in <a href="https://github.com/claudialbombin/2imat">2imat</a> and <a href="https://github.com/claudialbombin/pitwall">pitwall</a></li>
+</ul>
 
+<p><strong>Databases</strong></p>
+<ul>
+<li><code>MySQL</code> · <code>MongoDB</code> · <code>Neo4j</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (data acquisition & databases coursework)</li>
+</ul>
+
+<p><strong>Dashboards &amp; Viz</strong></p>
+<ul>
+<li><code>Streamlit</code> · <code>Tableau</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
+<li><code>Plotly</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a>, <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator</li>
+</ul>
+
+<p><strong>Testing &amp; CI/CD</strong></p>
+<ul>
+<li><code>pytest</code> — 77 unit tests in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, plus <a href="https://github.com/claudialbombin/pitwall">pitwall</a> and <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a></li>
+<li><code>GitHub Actions</code> — <a href="./.github/workflows/snake.yml">snake.yml</a> and <a href="./.github/workflows/update-stats.yml">update-stats.yml</a> right here, plus CI in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a></li>
+</ul>
+
+<p><strong>Web</strong></p>
+<ul>
+<li><code>JavaScript</code> — <a href="https://github.com/claudialbombin/pause">pause</a> (PWA)</li>
+<li><code>HTML</code> · <code>CSS</code> — <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator, <a href="https://github.com/claudialbombin/pause">pause</a></li>
+</ul>
+
+<sub>Dropped from my old badge list because I couldn't back them up with real code: TensorFlow, PyTorch, R, CUDA, Figma, Adobe CC, Canva, PowerShell, Selenium, ArangoDB, SQL Server. If I start actually using one, it'll show up here — with a link.</sub>
+
+</details>
 
 <br/>
 
