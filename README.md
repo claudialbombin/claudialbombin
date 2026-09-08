@@ -123,7 +123,6 @@ class Claudia:
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
-> Badges above use shields.io (the same service you had before). If those don't load in your browser either, the tech-stack list is still readable as plain text — see the alt text, or ask and I'll convert them to self-hosted SVGs the same way I did the rest of this page.
 
 <br/>
 
