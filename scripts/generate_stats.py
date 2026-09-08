@@ -24,7 +24,7 @@ QUANT_SIM_REPOS = {
 DUAL_PY_C_REPOS = {"beat-the-dealer", "monte-carlo-option-pricer", "mus-stochastic-suite"}
 
 # Not derivable from the API — bump by hand once a year.
-YEARS_AT_ICAI = 2
+YEARS_AT_ICAI = 3
 
 API = "https://api.github.com"
 
