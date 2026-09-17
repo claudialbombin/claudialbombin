@@ -106,69 +106,44 @@ class Claudia:
 
 ## 💻 Tech Stack
 
-<div align="center">
-<img src="assets/tech-stack.svg" alt="Tech stack, verified from real repos" width="100%"/>
-</div>
-
-<sub>No badge service, no guessing — every pill above is a plain SVG that lives in this repo, and every technology on it was found by grepping my own public repos (dependency files, imports, coursework folders), not copied from a generic list. Click any category below to jump straight to the proof.</sub>
+<sub>Every badge below is a real link, straight to the repo that proves it — self-hosted, animated, no badge service. Click one.</sub>
 
 <br/>
 
-<details>
-<summary><b>🐍 Languages</b> — 2</summary>
-<br/>
-<ul>
-<li><code>Python</code> — 11 repos, e.g. <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
-<li><code>C</code> — 5 repos, e.g. <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a>, <a href="https://github.com/claudialbombin/BSQ">BSQ</a>, <a href="https://github.com/claudialbombin/push_swap">push_swap</a></li>
-</ul>
-</details>
+<p><sub><b>Languages</b></sub></p>
+<a href="https://github.com/claudialbombin/pitwall"><img src="assets/tech/python.svg" alt="Python"/></a>
+<a href="https://github.com/claudialbombin/beat-the-dealer"><img src="assets/tech/c.svg" alt="C"/></a>
 
-<details>
-<summary><b>🧠 Data Science &amp; ML</b> — 6</summary>
-<br/>
-<ul>
-<li><code>NumPy</code> · <code>Pandas</code> · <code>Matplotlib</code> — across <a href="https://github.com/claudialbombin/pitwall">pitwall</a>, <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, <a href="https://github.com/claudialbombin/scm-heston-filter">scm-heston-filter</a>, <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
-<li><code>Seaborn</code> · <code>scikit-learn</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (Visualización de Datos, ML coursework)</li>
-<li><code>Jupyter</code> — analysis notebooks in <a href="https://github.com/claudialbombin/2imat">2imat</a> and <a href="https://github.com/claudialbombin/pitwall">pitwall</a></li>
-</ul>
-</details>
+<p><sub><b>Data Science & ML</b></sub></p>
+<a href="https://github.com/claudialbombin/pitwall"><img src="assets/tech/numpy.svg" alt="NumPy"/></a>
+<a href="https://github.com/claudialbombin/monte-carlo-option-pricer"><img src="assets/tech/pandas.svg" alt="Pandas"/></a>
+<a href="https://github.com/claudialbombin/scm-heston-filter"><img src="assets/tech/matplotlib.svg" alt="Matplotlib"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/seaborn.svg" alt="Seaborn"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/scikit-learn.svg" alt="scikit-learn"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/jupyter.svg" alt="Jupyter"/></a>
 
-<details>
-<summary><b>🗄️ Databases</b> — 3</summary>
-<br/>
-<ul>
-<li><code>MySQL</code> · <code>MongoDB</code> · <code>Neo4j</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a> (data acquisition & databases coursework)</li>
-</ul>
-</details>
+<p><sub><b>Databases</b></sub></p>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/mysql.svg" alt="MySQL"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/mongodb.svg" alt="MongoDB"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/neo4j.svg" alt="Neo4j"/></a>
 
-<details>
-<summary><b>📈 Dashboards &amp; Viz</b> — 3</summary>
-<br/>
-<ul>
-<li><code>Streamlit</code> · <code>Tableau</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a></li>
-<li><code>Plotly</code> — <a href="https://github.com/claudialbombin/2imat">2imat</a>, <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator</li>
-</ul>
-</details>
+<p><sub><b>Dashboards & Viz</b></sub></p>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/streamlit.svg" alt="Streamlit"/></a>
+<a href="https://github.com/claudialbombin/pitwall"><img src="assets/tech/plotly.svg" alt="Plotly"/></a>
+<a href="https://github.com/claudialbombin/2imat"><img src="assets/tech/tableau.svg" alt="Tableau"/></a>
 
-<details>
-<summary><b>✅ Testing &amp; CI/CD</b> — 2</summary>
-<br/>
-<ul>
-<li><code>pytest</code> — 77 unit tests in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a>, plus <a href="https://github.com/claudialbombin/pitwall">pitwall</a> and <a href="https://github.com/claudialbombin/beat-the-dealer">beat-the-dealer</a></li>
-<li><code>GitHub Actions</code> — <a href="./.github/workflows/snake.yml">snake.yml</a> and <a href="./.github/workflows/update-stats.yml">update-stats.yml</a> right here, plus CI in <a href="https://github.com/claudialbombin/monte-carlo-option-pricer">monte-carlo-option-pricer</a></li>
-</ul>
-</details>
+<p><sub><b>Testing & CI/CD</b></sub></p>
+<a href="https://github.com/claudialbombin/monte-carlo-option-pricer"><img src="assets/tech/pytest.svg" alt="pytest"/></a>
+<a href="./.github/workflows/snake.yml"><img src="assets/tech/github-actions.svg" alt="GitHub Actions"/></a>
 
-<details>
-<summary><b>🌐 Web</b> — 3</summary>
-<br/>
-<ul>
-<li><code>JavaScript</code> — <a href="https://github.com/claudialbombin/pause">pause</a> (PWA)</li>
-<li><code>HTML</code> · <code>CSS</code> — <a href="https://github.com/claudialbombin/pitwall">pitwall</a>'s web simulator, <a href="https://github.com/claudialbombin/pause">pause</a></li>
-</ul>
-</details>
+<p><sub><b>Web</b></sub></p>
+<a href="https://github.com/claudialbombin/pause"><img src="assets/tech/javascript.svg" alt="JavaScript"/></a>
+<a href="https://github.com/claudialbombin/pitwall"><img src="assets/tech/html.svg" alt="HTML"/></a>
+<a href="https://github.com/claudialbombin/pitwall"><img src="assets/tech/css.svg" alt="CSS"/></a>
 
-<sub>Dropped from my old badge list because I couldn't back them up with real code: TensorFlow, PyTorch, R, CUDA, Figma, Adobe CC, Canva, PowerShell, Selenium, ArangoDB, SQL Server. If I start actually using one, it'll show up here — with a link.</sub>
+<br/>
+
+<sub>Every technology above was verified by grepping my own public repos (dependency files, imports, coursework folders) — not copied from a generic list. Dropped from my old badge list for lack of evidence: TensorFlow, PyTorch, R, CUDA, Figma, Adobe CC, Canva, PowerShell, Selenium, ArangoDB, SQL Server.</sub>
 
 <br/>
 
