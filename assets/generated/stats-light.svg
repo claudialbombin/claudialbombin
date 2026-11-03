@@ -1,12 +1,12 @@
 <svg width="900" height="132" viewBox="0 0 900 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile stats">
   <rect x="0.5" y="0.5" width="899" height="131" rx="12" fill="#ffffff" stroke="#d0d7de"/>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.00s" fill="freeze"/>
-  <text x="112.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#0969da" text-anchor="middle" >7</text>
+  <text x="112.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#0969da" text-anchor="middle" >14</text>
   <text x="112.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2328" text-anchor="middle" >public</text>
   <text x="112.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2328" text-anchor="middle" >repos</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.15s" fill="freeze"/>
-  <text x="337.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#0969da" text-anchor="middle" >7</text>
+  <text x="337.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#0969da" text-anchor="middle" >6</text>
   <text x="337.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2328" text-anchor="middle" >live</text>
   <text x="337.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2328" text-anchor="middle" >demos</text>
   </g>
