@@ -22,7 +22,7 @@
         50%, 95% { opacity: 0; }
         100% { opacity: 1; }
       }
-      #cursor { animation: blink 1s steps(1) infinite; }
+      .cursor { animation: blink 1s steps(1) infinite; }
 
       .typeline { opacity: 0; font: 600 22px "Fira Code", Consolas, monospace; fill: #9fd0ff; }
       @keyframes cycle {
@@ -57,10 +57,10 @@
     <text x="450" y="102" text-anchor="middle" class="tag">Mathematical Engineering &amp; AI · ICAI + 42 Madrid</text>
 
     <g text-anchor="middle">
-      <text id="line1" class="typeline" x="450" y="150">Mathematical Engineering &amp; AI @ ICAI<tspan id="cursor">_</tspan></text>
-      <text id="line2" class="typeline" x="450" y="150">42 Madrid Fundacion Telefonica Cursus<tspan id="cursor">_</tspan></text>
-      <text id="line3" class="typeline" x="450" y="150">Monte Carlo methods &amp; stochastic simulation<tspan id="cursor">_</tspan></text>
-      <text id="line4" class="typeline" x="450" y="150">Competitive debater — British Parliamentary<tspan id="cursor">_</tspan></text>
+      <text id="line1" class="typeline" x="450" y="150">solving F1 pit stops as a Markov Decision Process<tspan class="cursor">_</tspan></text>
+      <text id="line2" class="typeline" x="450" y="150">pricing options under Heston stochastic volatility<tspan class="cursor">_</tspan></text>
+      <text id="line3" class="typeline" x="450" y="150">counting cards over a billion simulated rounds<tspan class="cursor">_</tspan></text>
+      <text id="line4" class="typeline" x="450" y="150">British Parliamentary debater, building tools for it<tspan class="cursor">_</tspan></text>
     </g>
   </g>
 </svg>

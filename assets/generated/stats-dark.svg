@@ -1,0 +1,27 @@
+<svg width="900" height="132" viewBox="0 0 900 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile stats">
+  <rect x="0.5" y="0.5" width="899" height="131" rx="12" fill="#0d1117" stroke="#30363d"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.00s" fill="freeze"/>
+  <text x="112.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#58a6ff" text-anchor="middle" >7</text>
+  <text x="112.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >public</text>
+  <text x="112.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >repos</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.15s" fill="freeze"/>
+  <text x="337.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#58a6ff" text-anchor="middle" >7</text>
+  <text x="337.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >live</text>
+  <text x="337.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >demos</text>
+  </g>
+  <line x1="225.0" y1="24" x2="225.0" y2="96" stroke="#30363d"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.30s" fill="freeze"/>
+  <text x="562.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#58a6ff" text-anchor="middle" >4</text>
+  <text x="562.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >quant / sim</text>
+  <text x="562.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >projects</text>
+  </g>
+  <line x1="450.0" y1="24" x2="450.0" y2="96" stroke="#30363d"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.45s" fill="freeze"/>
+  <text x="787.5" y="50" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#58a6ff" text-anchor="middle" >327</text>
+  <text x="787.5" y="72" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >commits</text>
+  <text x="787.5" y="87" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#e6edf3" text-anchor="middle" >in 2026</text>
+  </g>
+  <line x1="675.0" y1="24" x2="675.0" y2="96" stroke="#30363d"/>
+  <text x="450.0" y="118" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#8b949e" text-anchor="middle" >live from the GitHub API · refreshed 2026-11-03</text>
+</svg>

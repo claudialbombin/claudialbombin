@@ -1,0 +1,15 @@
+<svg width="440" height="190" viewBox="0 0 440 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="salchi-helper: A tiny dachshund that floats above every window typing at its laptop. The sticker counts your pending tasks; hover and the whole list opens.">
+  <rect x="0.5" y="0.5" width="439" height="189" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="22" y="30" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#59636e" text-anchor="start" letter-spacing="1.2">DESKTOP APP</text>
+  <text x="22" y="54" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0969da" text-anchor="start" >salchi-helper</text>
+  <text x="22" y="80" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#1f2328" text-anchor="start" >A tiny dachshund that floats above every window typing at its</text>
+  <text x="22" y="98" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#1f2328" text-anchor="start" >laptop. The sticker counts your pending tasks; hover and the</text>
+  <text x="22" y="116" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#1f2328" text-anchor="start" >whole list opens.</text>
+  <rect x="22" y="128" width="330" height="24" rx="12" fill="#ddf4ff"/>
+  <text x="32" y="144" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#0550ae" text-anchor="start" >macOS · Windows · Linux · Notion + Google Calendar</text>
+  <circle cx="27" cy="171" r="5" fill="#F05138"/>
+  <text x="37" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#59636e" text-anchor="start" >Swift</text>
+  <circle cx="87.0" cy="171" r="5" fill="#f1e05a"/>
+  <text x="97.0" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#59636e" text-anchor="start" >JavaScript</text>
+  <text x="418" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#59636e" text-anchor="end" >★ 0 · pushed today</text>
+</svg>

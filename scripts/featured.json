@@ -1,0 +1,94 @@
+{
+  "_comment": "Edit this file to change the profile; scripts/generate_stats.py reads it daily.",
+  "language_exclusions": {
+    "repos": {
+      "2imat": "a committed virtualenv inflates its byte count; remove once the repo is cleaned",
+      "cececat": "index.html embeds ~2 MB of base64 font/images that GitHub counts as HTML; remove once assets are split out"
+    },
+    "languages": [
+      "Jupyter Notebook"
+    ]
+  },
+  "quant_sim_repos": [
+    "pitwall",
+    "monte-carlo-option-pricer",
+    "beat-the-dealer",
+    "scm-heston-filter"
+  ],
+  "dual_py_c_repos": [
+    "beat-the-dealer",
+    "monte-carlo-option-pricer"
+  ],
+  "featured": [
+    {
+      "repo": "pitwall",
+      "title": "pitwall",
+      "kicker": "F1 STRATEGY · MDP",
+      "tagline": "Pit-stop timing as a finite-horizon Markov Decision Process, solved by backward induction, with tyre wear from Gaussian Process regression and Bayesian safety-car estimates.",
+      "highlight": "Faster in 53% of 57 real 2023 strategies (modelled time)",
+      "demo": "https://claudialbombin.github.io/pitwall/",
+      "langs": [
+        "Python"
+      ]
+    },
+    {
+      "repo": "beat-the-dealer",
+      "title": "beat-the-dealer",
+      "kicker": "MONTE CARLO · PYTHON + C",
+      "tagline": "Blackjack basic strategy derived by simulation, checked cell by cell against an exact solver, plus a Hi-Lo counting study over a billion rounds.",
+      "highlight": "House edge 0.696% ± 0.007% · 380/380 cells match",
+      "demo": "https://claudialbombin.github.io/beat-the-dealer/",
+      "langs": [
+        "Python",
+        "C",
+        "JavaScript"
+      ]
+    },
+    {
+      "repo": "monte-carlo-option-pricer",
+      "title": "monte-carlo-option-pricer",
+      "kicker": "QUANT FINANCE · PYTHON + C",
+      "tagline": "European, Asian and barrier options under Black-Scholes and Heston, with Greeks by pathwise, likelihood-ratio, finite-difference and closed-form methods.",
+      "highlight": "182 unit tests · parallel Python and C engines",
+      "demo": null,
+      "langs": [
+        "Python",
+        "C"
+      ]
+    },
+    {
+      "repo": "scm-heston-filter",
+      "title": "scm-heston-filter",
+      "kicker": "SEQUENTIAL MONTE CARLO",
+      "tagline": "A particle filter that tracks the hidden variance of the Heston model from noisy price observations alone: the estimation side of the pricer's problem.",
+      "highlight": "Bootstrap filter · convergence study by particle count",
+      "demo": null,
+      "langs": [
+        "Python"
+      ]
+    },
+    {
+      "repo": "cececat",
+      "title": "cececat",
+      "kicker": "DEBATE · WEB APP",
+      "tagline": "A debate tournament manager in a single HTML file: guided setup, pairings, judges that actually rotate, live scoring from each judge's phone and standings.",
+      "highlight": "No backend · Académico and BP formats",
+      "demo": "https://claudialbombin.github.io/cececat/",
+      "langs": [
+        "JavaScript"
+      ]
+    },
+    {
+      "repo": "salchi-helper",
+      "title": "salchi-helper",
+      "kicker": "DESKTOP APP",
+      "tagline": "A tiny dachshund that floats above every window typing at its laptop. The sticker counts your pending tasks; hover and the whole list opens.",
+      "highlight": "macOS · Windows · Linux · Notion + Google Calendar",
+      "demo": null,
+      "langs": [
+        "Swift",
+        "JavaScript"
+      ]
+    }
+  ]
+}

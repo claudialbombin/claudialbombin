@@ -1,37 +1,58 @@
 #!/usr/bin/env python3
 """
-Regenerates assets/top-langs.svg and assets/profile-stats.svg from real,
-live GitHub data — no third-party badge service involved.
+Regenerates every SVG under assets/generated/ from live GitHub data.
 
-Run locally:   GITHUB_TOKEN=... python3 scripts/generate_stats.py
-Run in CI:     wired up in .github/workflows/update-stats.yml (uses the
-               repo's built-in GITHUB_TOKEN, no secrets to configure).
+Outputs (each in a dark and a light variant, picked by the README with
+<picture> + prefers-color-scheme):
+  stats-*.svg            headline numbers
+  langs-*.svg            most-used languages by bytes
+  activity-*.svg         the repos I pushed to most recently
+  cards/<repo>-*.svg     featured project cards (stars, language, last push)
+
+Which projects are featured, and their one-line results, live in
+scripts/featured.json, so editing the profile never means editing code.
+
+Run locally:  GITHUB_TOKEN=... python3 scripts/generate_stats.py
+Run in CI:    .github/workflows/refresh-profile.yml (daily).
+Standard library only; no third-party badge service is involved.
 """
+import datetime as dt
 import json
 import os
+import textwrap
+import urllib.parse
 import urllib.request
+from xml.sax.saxutils import escape
 
 USERNAME = "claudialbombin"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
-
-# Repos that count as "quant / simulation" projects and repos that ship a
-# parallel Python + C implementation. Maintained by hand since GitHub has
-# no reliable way to infer this automatically — update as new repos land.
-QUANT_SIM_REPOS = {
-    "pitwall", "monte-carlo-option-pricer", "beat-the-dealer",
-    "scm-heston-filter", "mus-stochastic-suite",
-}
-DUAL_PY_C_REPOS = {"beat-the-dealer", "monte-carlo-option-pricer", "mus-stochastic-suite"}
-
-# Not derivable from the API — bump by hand once a year.
-YEARS_AT_ICAI = 3
-
 API = "https://api.github.com"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, "assets", "generated")
+FONT = "Segoe UI, -apple-system, Helvetica, Arial, sans-serif"
 
+THEMES = {
+    "dark": {"bg": "#0d1117", "border": "#30363d", "text": "#e6edf3",
+             "muted": "#8b949e", "accent": "#58a6ff", "track": "#1c2b3f",
+             "pill": "#132238", "pill_text": "#9fd0ff"},
+    "light": {"bg": "#ffffff", "border": "#d0d7de", "text": "#1f2328",
+              "muted": "#59636e", "accent": "#0969da", "track": "#eaeef2",
+              "pill": "#ddf4ff", "pill_text": "#0550ae"},
+}
+LANG_COLORS = {
+    "Python": "#3572A5", "C": "#555555", "HTML": "#e34c26",
+    "Jupyter Notebook": "#DA5B0B", "JavaScript": "#f1e05a", "CSS": "#563d7c",
+    "Shell": "#89e051", "TeX": "#3D6117", "TSQL": "#e38c00", "Makefile": "#427819",
+    "Swift": "#F05138", "C#": "#178600", "PowerShell": "#012456",
+}
+
+
+# ---------------------------------------------------------------- GitHub API
 
 def gh_get(path):
     req = urllib.request.Request(API + path)
     req.add_header("Accept", "application/vnd.github+json")
+    req.add_header("User-Agent", f"{USERNAME}-profile-refresh")
     if TOKEN:
         req.add_header("Authorization", f"Bearer {TOKEN}")
     with urllib.request.urlopen(req, timeout=20) as resp:
@@ -46,115 +67,197 @@ def fetch_repos():
             break
         repos.extend(batch)
         page += 1
-    return [r for r in repos if not r.get("fork")]
+    return [r for r in repos if not r.get("fork") and not r.get("private")]
 
 
 def fetch_languages(repo_name):
+    # Deliberately no try/except: a rate-limited or failed call must abort the
+    # run so CI keeps yesterday's SVGs instead of committing a partial chart.
+    return gh_get(f"/repos/{USERNAME}/{repo_name}/languages")
+
+
+def fetch_commits_this_year(year):
+    q = urllib.parse.quote(f"author:{USERNAME} committer-date:>={year}-01-01")
     try:
-        return gh_get(f"/repos/{USERNAME}/{repo_name}/languages")
+        return gh_get(f"/search/commits?q={q}&per_page=1")["total_count"]
     except Exception:
-        return {}
+        return None
 
 
-def build_top_langs_svg(lang_totals):
-    total = sum(lang_totals.values()) or 1
-    colors = {
-        "Python": "#3776AB", "C": "#00599C", "HTML": "#E34C26",
-        "Jupyter Notebook": "#F37626", "JavaScript": "#f1e05a",
-        "CSS": "#563d7c", "Shell": "#89E051", "TeX": "#3D6117",
-        "SQL": "#e38c00", "R": "#198CE7",
-    }
-    top = sorted(lang_totals.items(), key=lambda kv: -kv[1])[:5]
+# ------------------------------------------------------------------ helpers
 
-    W, H = 480, 20 + 46 + len(top) * 37 + 24
-    pad_l, label_w, pct_w = 24, 140, 40
-    bar_max_w = W - 24 - label_w - pct_w
-    rows, y = [], 66
+def ago(iso, now):
+    then = dt.datetime.strptime(iso, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+    days = (now - then).days
+    if days <= 0:
+        return "today"
+    if days == 1:
+        return "yesterday"
+    if days < 14:
+        return f"{days} days ago"
+    if days < 60:
+        return f"{days // 7} weeks ago"
+    if days < 730:
+        return f"{days // 30} months ago"
+    return f"{days // 365} years ago"
+
+
+def frame(w, h, t, body, label):
+    return (f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
+            f'xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{escape(label)}">\n'
+            f'  <rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="12" '
+            f'fill="{t["bg"]}" stroke="{t["border"]}"/>\n{body}\n</svg>\n')
+
+
+def txt(x, y, s, size, fill, weight=400, anchor="start", extra=""):
+    return (f'  <text x="{x}" y="{y}" font-family="{FONT}" font-size="{size}" '
+            f'font-weight="{weight}" fill="{fill}" text-anchor="{anchor}" {extra}>'
+            f'{escape(s)}</text>')
+
+
+def fade_in(i, step=0.12):
+    return (f'<animate attributeName="opacity" from="0" to="1" dur="0.6s" '
+            f'begin="{i*step:.2f}s" fill="freeze"/>')
+
+
+# ------------------------------------------------------------------- cards
+
+def build_stats(t, tiles, updated):
+    w, h = 900, 132
+    tw = w / len(tiles)
+    parts = []
+    for i, (num, l1, l2) in enumerate(tiles):
+        cx = tw * i + tw / 2
+        parts.append(f'  <g opacity="0">{fade_in(i, 0.15)}')
+        parts.append(txt(f"{cx:.1f}", 50, num, 30, t["accent"], 700, "middle"))
+        parts.append(txt(f"{cx:.1f}", 72, l1, 12, t["text"], 400, "middle"))
+        parts.append(txt(f"{cx:.1f}", 87, l2, 12, t["text"], 400, "middle"))
+        parts.append("  </g>")
+        if i:
+            parts.append(f'  <line x1="{tw*i:.1f}" y1="24" x2="{tw*i:.1f}" y2="96" stroke="{t["border"]}"/>')
+    parts.append(txt(w / 2, h - 14, f"live from the GitHub API · refreshed {updated}",
+                     10, t["muted"], 400, "middle"))
+    return frame(w, h, t, "\n".join(parts), "Profile stats")
+
+
+def build_langs(t, totals, skipped=()):
+    total = sum(totals.values()) or 1
+    top = sorted(totals.items(), key=lambda kv: -kv[1])[:6]
+    w, h = 900, 62 + len(top) * 30 + 28
+    label_w, pct_w, pad = 170, 60, 24
+    bar = w - 2 * pad - label_w - pct_w
+    parts = [txt(pad, 34, "Most used languages", 15, t["accent"], 700)]
     for i, (name, n) in enumerate(top):
+        y = 62 + i * 30
         pct = 100 * n / total
-        w = max(3, bar_max_w * pct / 100)
-        color = colors.get(name, "#8b98a5")
-        rows.append(f'''
-    <g transform="translate({pad_l},{y})">
-      <text x="0" y="14" font-family="Segoe UI, Verdana, sans-serif" font-size="13" fill="#c9d9ec">{name}</text>
-      <rect x="{label_w}" y="4" width="{bar_max_w}" height="10" rx="5" fill="#1c2b3f"/>
-      <rect x="{label_w}" y="4" width="0" height="10" rx="5" fill="{color}">
-        <animate attributeName="width" from="0" to="{w:.1f}" dur="1.1s" begin="{i*0.12:.2f}s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/>
-      </rect>
-      <text x="{label_w + bar_max_w + 10}" y="14" font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="#8b98a5">{pct:.1f}%</text>
-    </g>''')
-        y += 37
-
-    return f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Most used languages">
-  <defs><clipPath id="r"><rect width="{W}" height="{H}" rx="12"/></clipPath></defs>
-  <g clip-path="url(#r)">
-    <rect width="{W}" height="{H}" fill="#0d1117"/>
-    <rect width="{W}" height="{H}" fill="none" stroke="#30363d" stroke-width="1"/>
-    <text x="{pad_l}" y="30" font-family="Segoe UI, Verdana, sans-serif" font-size="16" font-weight="700" fill="#58a6ff">Most Used Languages</text>
-    {''.join(rows)}
-    <text x="{pad_l}" y="{H-12}" font-family="Segoe UI, Verdana, sans-serif" font-size="10" fill="#586069">live from the GitHub API, by bytes across public repos</text>
-  </g>
-</svg>
-'''
+        bw = max(3, bar * pct / 100)
+        color = LANG_COLORS.get(name, "#8b949e")
+        parts.append(txt(pad, y + 11, name, 12.5, t["text"]))
+        parts.append(f'  <rect x="{pad+label_w}" y="{y+2}" width="{bar}" height="10" rx="5" fill="{t["track"]}"/>')
+        parts.append(f'  <rect x="{pad+label_w}" y="{y+2}" width="0" height="10" rx="5" fill="{color}">'
+                     f'<animate attributeName="width" from="0" to="{bw:.1f}" dur="1.1s" '
+                     f'begin="{i*0.1:.2f}s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>')
+        parts.append(txt(w - pad, y + 11, f"{pct:.1f}%", 12, t["muted"], 400, "end"))
+    note = "by bytes of code across public, non-fork repos"
+    if skipped:
+        note += " · excludes " + ", ".join(skipped)
+    parts.append(txt(pad, h - 14, note, 10, t["muted"]))
+    return frame(w, h, t, "\n".join(parts), "Most used languages")
 
 
-def build_profile_stats_svg(repo_count, quant_count, dual_count):
-    stats = [
-        (str(repo_count), ["Public", "repos"]),
-        (str(quant_count), ["Quant / sim", "projects"]),
-        (str(dual_count), ["Python + C", "repos"]),
-        (str(YEARS_AT_ICAI), ["Years @", "ICAI"]),
-    ]
-    W, H = 480, 120
-    tile_w = W / len(stats)
-    tiles = []
-    for i, (num, label_lines) in enumerate(stats):
-        x = tile_w * i
-        delay = i * 0.15
-        label_tspans = "".join(
-            f'<tspan x="{tile_w/2:.1f}" dy="{0 if j==0 else 14}">{line}</tspan>'
-            for j, line in enumerate(label_lines)
-        )
-        tiles.append(f'''
-    <g transform="translate({x:.1f},0)" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="{delay:.2f}s" fill="freeze"/>
-      <text x="{tile_w/2:.1f}" y="46" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="28" font-weight="700" fill="#58a6ff">{num}</text>
-      <text x="{tile_w/2:.1f}" y="66" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="10.5" fill="#c9d9ec">{label_tspans}</text>
-    </g>''')
-        if i > 0:
-            tiles.append(f'<line x1="{x:.1f}" y1="20" x2="{x:.1f}" y2="{H-20}" stroke="#30363d" stroke-width="1"/>')
+def build_activity(t, repos, now):
+    recent = sorted(repos, key=lambda r: r["pushed_at"], reverse=True)[:5]
+    w, h = 900, 58 + len(recent) * 34 + 10
+    parts = [txt(24, 34, "Recently pushed", 15, t["accent"], 700),
+             txt(w - 24, 34, f"updated daily · {now:%Y-%m-%d}", 11, t["muted"], 400, "end")]
+    for i, r in enumerate(recent):
+        y = 64 + i * 34
+        lang = r.get("language") or "—"
+        color = LANG_COLORS.get(lang, "#8b949e")
+        desc = (r.get("description") or "").strip()
+        if len(desc) > 78:
+            desc = desc[:75].rstrip() + "…"
+        parts.append(f'  <g opacity="0">{fade_in(i)}')
+        parts.append(f'  <circle cx="30" cy="{y}" r="5" fill="{color}"/>')
+        parts.append(txt(44, y + 4.5, r["name"], 13.5, t["text"], 700))
+        parts.append(txt(250, y + 4.5, desc, 12, t["muted"]))
+        parts.append(txt(w - 24, y + 4.5, ago(r["pushed_at"], now), 12, t["accent"], 600, "end"))
+        parts.append("  </g>")
+    return frame(w, h, t, "\n".join(parts), "Recently pushed repositories")
 
-    return f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile stats">
-  <defs><clipPath id="r"><rect width="{W}" height="{H}" rx="12"/></clipPath></defs>
-  <g clip-path="url(#r)">
-    <rect width="{W}" height="{H}" fill="#0d1117"/>
-    <rect width="{W}" height="{H}" fill="none" stroke="#30363d" stroke-width="1"/>
-    {''.join(tiles)}
-  </g>
-</svg>
-'''
+
+def build_card(t, p, repo, now):
+    w, h = 440, 190
+    pad = 22
+    langs = p.get("langs") or [l for l in [(repo or {}).get("language")] if l]
+    stars = (repo or {}).get("stargazers_count", 0)
+    pushed = ago(repo["pushed_at"], now) if repo else ""
+    parts = [txt(pad, 30, p["kicker"], 10.5, t["muted"], 600, extra='letter-spacing="1.2"'),
+             txt(pad, 54, p["title"], 18, t["accent"], 700)]
+    for i, line in enumerate(textwrap.wrap(p["tagline"], 62)[:3]):
+        parts.append(txt(pad, 80 + i * 18, line, 12.5, t["text"]))
+    hl = p["highlight"]
+    pill_w = min(w - 2 * pad, 20 + len(hl) * 6.2)
+    parts.append(f'  <rect x="{pad}" y="128" width="{pill_w:.0f}" height="24" rx="12" fill="{t["pill"]}"/>')
+    parts.append(txt(pad + 10, 144, hl, 11.5, t["pill_text"], 600))
+    meta = []
+    x = pad
+    for lang in langs:
+        meta.append(f'  <circle cx="{x+5}" cy="171" r="5" fill="{LANG_COLORS.get(lang, "#8b949e")}"/>')
+        meta.append(txt(x + 15, 175, lang, 11.5, t["muted"]))
+        x += 15 + len(lang) * 6.6 + 12
+    right = f"★ {stars} · pushed {pushed}" if repo else ""
+    if p.get("demo"):
+        right += " · ▶ live demo"
+    meta.append(txt(w - pad, 175, right, 11.5, t["muted"], 400, "end"))
+    parts.extend(meta)
+    return frame(w, h, t, "\n".join(parts), f'{p["title"]}: {p["tagline"]}')
+
+
+# --------------------------------------------------------------------- main
+
+def write(rel, content):
+    path = os.path.join(OUT, rel)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
 
 
 def main():
+    with open(os.path.join(ROOT, "scripts", "featured.json"), encoding="utf-8") as f:
+        cfg = json.load(f)
+    now = dt.datetime.now(dt.timezone.utc)
     repos = fetch_repos()
-    repo_names = {r["name"] for r in repos}
+    by_name = {r["name"]: r for r in repos}
 
-    lang_totals = {}
+    excl = cfg.get("language_exclusions", {})
+    skip_repos = set(excl.get("repos", {}))
+    skip_langs = set(excl.get("languages", []))
+    totals = {}
     for r in repos:
+        if r["name"] in skip_repos:
+            continue
         for lang, n in fetch_languages(r["name"]).items():
-            lang_totals[lang] = lang_totals.get(lang, 0) + n
+            if lang not in skip_langs:
+                totals[lang] = totals.get(lang, 0) + n
 
-    quant_count = len(QUANT_SIM_REPOS & repo_names)
-    dual_count = len(DUAL_PY_C_REPOS & repo_names)
+    commits = fetch_commits_this_year(now.year)
+    live = sum(1 for r in repos if r.get("has_pages"))
+    tiles = [
+        (str(len(repos)), "public", "repos"),
+        (str(live), "live", "demos"),
+        (str(len(set(cfg["quant_sim_repos"]) & by_name.keys())), "quant / sim", "projects"),
+        ("—" if commits is None else str(commits), f"commits", f"in {now.year}"),
+    ]
+    for name, t in THEMES.items():
+        write(f"stats-{name}.svg", build_stats(t, tiles, f"{now:%Y-%m-%d}"))
+        write(f"langs-{name}.svg", build_langs(t, totals, sorted(skip_langs)))
+        write(f"activity-{name}.svg", build_activity(t, repos, now))
+        for p in cfg["featured"]:
+            write(f"cards/{p['repo']}-{name}.svg", build_card(t, p, by_name.get(p["repo"]), now))
 
-    os.makedirs("assets", exist_ok=True)
-    with open("assets/top-langs.svg", "w") as f:
-        f.write(build_top_langs_svg(lang_totals))
-    with open("assets/profile-stats.svg", "w") as f:
-        f.write(build_profile_stats_svg(len(repos), quant_count, dual_count))
-
-    print(f"Updated assets/top-langs.svg and assets/profile-stats.svg "
-          f"from {len(repos)} repos.")
+    print(f"Refreshed assets/generated from {len(repos)} public repos "
+          f"({live} with Pages, {commits} commits in {now.year}).")
 
 
 if __name__ == "__main__":

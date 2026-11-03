@@ -1,0 +1,15 @@
+<svg width="440" height="190" viewBox="0 0 440 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="monte-carlo-option-pricer: European, Asian and barrier options under Black-Scholes and Heston, with Greeks by pathwise, likelihood-ratio, finite-difference and closed-form methods.">
+  <rect x="0.5" y="0.5" width="439" height="189" rx="12" fill="#0d1117" stroke="#30363d"/>
+  <text x="22" y="30" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#8b949e" text-anchor="start" letter-spacing="1.2">QUANT FINANCE · PYTHON + C</text>
+  <text x="22" y="54" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#58a6ff" text-anchor="start" >monte-carlo-option-pricer</text>
+  <text x="22" y="80" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#e6edf3" text-anchor="start" >European, Asian and barrier options under Black-Scholes and</text>
+  <text x="22" y="98" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#e6edf3" text-anchor="start" >Heston, with Greeks by pathwise, likelihood-ratio, finite-</text>
+  <text x="22" y="116" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#e6edf3" text-anchor="start" >difference and closed-form methods.</text>
+  <rect x="22" y="128" width="305" height="24" rx="12" fill="#132238"/>
+  <text x="32" y="144" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#9fd0ff" text-anchor="start" >182 unit tests · parallel Python and C engines</text>
+  <circle cx="27" cy="171" r="5" fill="#3572A5"/>
+  <text x="37" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8b949e" text-anchor="start" >Python</text>
+  <circle cx="93.6" cy="171" r="5" fill="#555555"/>
+  <text x="103.6" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8b949e" text-anchor="start" >C</text>
+  <text x="418" y="175" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8b949e" text-anchor="end" >★ 0 · pushed today</text>
+</svg>
