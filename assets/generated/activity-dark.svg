@@ -1,7 +1,7 @@
 <svg width="900" height="238" viewBox="0 0 900 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recently pushed repositories">
   <rect x="0.5" y="0.5" width="899" height="237" rx="12" fill="#0d1117" stroke="#30363d"/>
   <text x="24" y="34" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#58a6ff" text-anchor="start" >Recently pushed</text>
-  <text x="876" y="34" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#8b949e" text-anchor="end" >updated daily · 2026-11-08</text>
+  <text x="876" y="34" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#8b949e" text-anchor="end" >updated daily · 2026-11-09</text>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.00s" fill="freeze"/>
   <circle cx="30" cy="64" r="5" fill="#3572A5"/>
   <text x="44" y="68.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#e6edf3" text-anchor="start" >claudialbombin</text>
@@ -18,18 +18,18 @@
   <circle cx="30" cy="132" r="5" fill="#f1e05a"/>
   <text x="44" y="136.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#e6edf3" text-anchor="start" >beat-the-dealer</text>
   <text x="250" y="136.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#8b949e" text-anchor="start" >Monte Carlo simulation of blackjack with Hi-Lo card counting.  Computes opt…</text>
-  <text x="876" y="136.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >4 days ago</text>
+  <text x="876" y="136.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >5 days ago</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.36s" fill="freeze"/>
   <circle cx="30" cy="166" r="5" fill="#e34c26"/>
   <text x="44" y="170.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#e6edf3" text-anchor="start" >claudialbombin.github.io</text>
   <text x="250" y="170.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#8b949e" text-anchor="start" >Personal portfolio of Claudia Lopez: Mathematical Engineering &amp; AI student…</text>
-  <text x="876" y="170.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >4 days ago</text>
+  <text x="876" y="170.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >5 days ago</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.48s" fill="freeze"/>
   <circle cx="30" cy="200" r="5" fill="#555555"/>
   <text x="44" y="204.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#e6edf3" text-anchor="start" >42</text>
   <text x="250" y="204.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#8b949e" text-anchor="start" >Git para mi trabajo de la piscina del aula 42</text>
-  <text x="876" y="204.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >9 days ago</text>
+  <text x="876" y="204.5" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#58a6ff" text-anchor="end" >10 days ago</text>
   </g>
 </svg>
